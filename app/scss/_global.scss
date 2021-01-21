@@ -1,3 +1,11 @@
+html{
+  box-sizing: border-box;
+}
+*, *::before, *::after{
+  box-sizing: inherit;
+  outline: none;
+}
+
 body{
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
@@ -16,7 +24,11 @@ ul, li {
   padding: 0;
   list-style: none;
 }
-.subtitle-left{
+.container{
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.headline-left{
   position: relative;
   display: inline-block;
   font-size: 22px;
@@ -60,7 +72,53 @@ ul, li {
       display: block;
       width: 80px;
       height: 1px;
-      background-color: #4AF6CD;
+      background-color: $green;
     }
+  }
+}
+.subtitle{
+  display: inline-block;
+  text-align: right;
+  &__head{
+    font-weight: 800;
+    font-size: 40px;
+    padding-right: 10px;
+    span{
+      font-weight: 100;
+    }
+  }
+}
+.btn{
+  font-size: 40px;
+  line-height: 36;
+  font-weight: 800;
+  height: 80px;
+
+  span{
+    padding: 17px 57px 15px 17px;
+    background-color: $green;
+    margin-left: 19px;
+    position: relative;
+    &::before{
+      content:"";
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      background-color: #fff;
+      top: 50%;
+      left: -10px;
+    }
+    &::after{
+      content:"";
+      width: 25px;
+      height: 21px;
+      position: absolute;
+      top: 50%;
+      right: 17px;
+      transform: translateY(-50%);
+      background-image: url(../img/arrows-right.svg);
+      background-repeat: no-repeat;
+    }
+
   }
 }
