@@ -13,66 +13,68 @@ $(function () {
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: false,
+    infinite: true,
     asNavFor: ".header__slider",
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 3,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
 
   $(".surf-slider").slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: 25,
     focusOnSelect: true,
     asNavFor: ".slider-map",
     prevArrow:
       '<img src="img/arrows-left.svg" alt="arrows-left"  class="slider-arrows slider-arrows__left">',
     nextArrow:
       '<img src="img/arrows-right.svg" alt="arrows-right" class="slider-arrows slider-arrows__right">',
-    // responsive: [
-    //   {
-    //     breakpoint: 1200,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 3,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+    ],
   });
 
   $(".slider-map").slick({
@@ -81,6 +83,37 @@ $(function () {
     arrows: false,
     focusOnSelect: true,
     asNavFor: ".surf-slider",
+    responsive: [
+      {
+        breakpoint: 1041,
+        settings: {
+          slidesToShow: 3,
+          infinite: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+    ],
   });
 
   $(".holder__slider, .shop__slider").slick({
@@ -150,5 +183,10 @@ $(function () {
 
   $(".surfboard-box__circle").on("click", function () {
     $(this).toggleClass("active");
+  });
+
+  $(".menu-btn").on("click", function () {
+    $(".menu").toggle("active");
+    $(this).toggleClass("rotate");
   });
 });
